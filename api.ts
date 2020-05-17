@@ -2,6 +2,8 @@ import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 const app = new Application();
 const router = new Router();
 
+//data
+
 interface User {
     name: string,
     age: number,
