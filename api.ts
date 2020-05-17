@@ -7,7 +7,7 @@ interface User {
     age: number,
     email: string,
     minor: boolean
-}
+};
 
 let users: Array <User> =[
     {
@@ -52,7 +52,7 @@ let users: Array <User> =[
 //controllers
 const getUsers = ({response}:{response:any}) =>{
     response.body = users;
-}
+};
 const addUsers = async ({request, response}:{request: any; response:any}) =>{
     const body = await request.body();
     const user: User = body.value;
@@ -60,7 +60,7 @@ const addUsers = async ({request, response}:{request: any; response:any}) =>{
 
     response.status = 200;
     response.body = {status: "User added correctly!"}
-}
+};
 
 
 //MIDDLEWARES
@@ -83,10 +83,10 @@ app.use(async (ctx, next) => {
 //setting up a router
 router
     .get('/users', getUsers)
-    .post('/users', addUsers)
+    .post('/users', addUsers);
 
 app.use(router.routes());
-app.use(router.allowedMethods())
+app.use(router.allowedMethods());
 
 
 await app.listen({ port: 3000 });
