@@ -69,7 +69,7 @@ const addUsers = async ({request, response}:{request: any; response:any}) =>{
 app.use(async (ctx, next) => {
     await next();
     const rt = ctx.response.headers.get("X-Response-Time");
-    console.log(`${ctx.request.method} - ${ctx.request.url} - ${rt}`);
+    console.log(`METHOD: ${ctx.request.method} - URL: ${ctx.request.url} - TIME: ${rt}`);
 });
 
 //getting the time
